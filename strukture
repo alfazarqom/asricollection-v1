@@ -1,0 +1,1205 @@
+1. Root App Structure
+App
+│
+├── AppShell
+│   │
+│   ├── Header
+│   │   ├── AnnouncementSection
+│   │   │   └── AnnouncementText
+│   │   ├── MainHeaderSection
+│   │   │   ├── AppLogo
+│   │   │   ├── SearchButton
+│   │   │   ├── WishlistButton
+│   │   │   ├── CartButton
+│   │   │   └── ProfileButton
+│   │   ├── SearchSection
+│   │   │   └── SearchInput
+│   │   └── NavigationSection
+│   │       └── MegaMenu
+│   │
+│   ├── Main
+│   │   ├── HomePage
+│   │   ├── ProductPage
+│   │   ├── CategoriesPage
+│   │   ├── SearchPage
+│   │   ├── WishlistPage
+│   │   ├── CartPage
+│   │   ├── OrdersPage
+│   │   └── ProfilePage
+│   │
+│   ├── BottomNavigation
+│   │   ├── HomeNavItem
+│   │   ├── ProductsNavItem
+│   │   ├── WishlistNavItem
+│   │   ├── OrdersNavItem
+│   │   └── ProfileNavItem
+│   │
+│   └── Footer
+│       ├── FooterNavigation
+│       ├── NewsletterSection
+│       ├── SocialLinks
+│       └── Copyright
+│
+├── Standalone
+│   ├── ProductDetailPage
+│   ├── ProductReviewsPage
+│   ├── ProductQuestionsPage
+│   ├── RelatedProductsPage
+│   ├── CheckoutPage
+│   ├── AddressPage
+│   ├── ShippingPage
+│   ├── PaymentPage
+│   ├── PaymentReturnPage
+│   ├── OrderDetailPage
+│   ├── OrderTrackingPage
+│   ├── ReturnRefundPage
+│   ├── ContactPage
+│   ├── FAQPage
+│   └── NotFoundPage
+│
+├── GlobalComponents
+│   ├── ProductCard
+│   ├── PriceDisplay
+│   ├── StockIndicator
+│   ├── ProductVariantSelector
+│   ├── QuantitySelector
+│   ├── WishlistButton
+│   ├── CartButton
+│   ├── AddressCard
+│   ├── PaymentMethodCard
+│   ├── OrderItem
+│   ├── OrderStatusTimeline
+│   ├── EmptyState
+│   ├── ErrorState
+│   ├── LoadingState
+│   ├── SkeletonCard
+│   └── BottomDrawer
+│
+└── Overlays
+    ├── MegaMenuOverlay
+    ├── SearchOverlay
+    ├── FilterDrawer
+    ├── SortDrawer
+    ├── CartDrawer
+    ├── QuickViewModal
+    ├── ConfirmationModal
+    ├── Toast
+    └── LoadingOverlay
+
+
+2. AppShell — Shared Sections
+AppShell
+│
+├── Header
+│   ├── AnnouncementSection
+│   │   └── Elements
+│   │       ├── AnnouncementText
+│   │       └── AnnouncementLink
+│   │
+│   ├── MainHeaderSection
+│   │   └── Elements
+│   │       ├── AppLogo
+│   │       ├── SearchButton
+│   │       ├── WishlistButton
+│   │       ├── CartButton
+│   │       └── ProfileButton
+│   │
+│   ├── SearchSection
+│   │   └── Elements
+│   │       ├── SearchInput
+│   │       ├── SearchIcon
+│   │       └── ClearButton
+│   │
+│   └── NavigationSection
+│       └── Elements
+│           ├── NavigationItem
+│           ├── NavigationLink
+│           └── MegaMenuTrigger
+│
+├── BottomNavigation
+│   └── Elements
+│       ├── HomeNavItem
+│       ├── ProductsNavItem
+│       ├── WishlistNavItem
+│       ├── OrdersNavItem
+│       └── ProfileNavItem
+│
+└── Footer
+    ├── FooterNavigationSection
+    │   ├── FooterHeading
+    │   └── FooterLink
+    ├── NewsletterSection
+    │   ├── NewsletterTitle
+    │   ├── NewsletterDescription
+    │   ├── EmailInput
+    │   └── SubscribeButton
+    ├── SocialSection
+    │   ├── SocialLink
+    │   └── SocialIcon
+    └── CopyrightSection
+        └── CopyrightText
+
+
+3. Main Pages
+3.1 HomePage
+HomePage
+│
+├── HeroSection
+│   ├── HeroBanner
+│   ├── HeroImage
+│   ├── HeroTitle
+│   ├── HeroDescription
+│   ├── HeroButton
+│   └── BannerPagination
+│
+├── CategorySection
+│   ├── SectionHeader
+│   ├── SectionTitle
+│   ├── ViewAllLink
+│   ├── CategoryList
+│   └── CategoryCard
+│       ├── CategoryImage
+│       └── CategoryName
+│
+├── FeaturedProductsSection
+│   ├── SectionHeader
+│   ├── SectionTitle
+│   ├── ViewAllLink
+│   ├── ProductSlider
+│   └── ProductCard
+│
+├── PromotionalBannerSection
+│   ├── PromotionImage
+│   ├── PromotionTitle
+│   ├── PromotionDescription
+│   └── PromotionButton
+│
+├── BestSellingSection
+│   ├── SectionHeader
+│   ├── SectionTitle
+│   ├── ViewAllLink
+│   └── ProductGrid
+│
+├── NewArrivalsSection
+│   ├── SectionHeader
+│   ├── SectionTitle
+│   ├── ViewAllLink
+│   └── ProductSlider
+│
+├── RecommendedProductsSection
+│   ├── SectionHeader
+│   ├── SectionTitle
+│   └── ProductGrid
+│
+└── NewsletterSection
+    ├── NewsletterTitle
+    ├── NewsletterDescription
+    ├── EmailInput
+    └── SubscribeButton
+
+
+3.2 ProductPage
+ProductPage
+│
+├── BreadcrumbSection
+│   └── Breadcrumbs
+│
+├── PageHeaderSection
+│   ├── PageTitle
+│   ├── ProductCount
+│   └── PageDescription
+│
+├── ToolbarSection
+│   ├── FilterButton
+│   ├── SortDropdown
+│   ├── ViewModeButton
+│   └── ActiveFilterCount
+│
+├── ActiveFiltersSection
+│   ├── ActiveFilterChip
+│   └── ClearFiltersButton
+│
+├── ProductListingSection
+│   ├── ProductGrid
+│   │   └── ProductCard
+│   │       ├── ProductImage
+│   │       ├── ProductBadge
+│   │       ├── WishlistButton
+│   │       ├── ProductName
+│   │       ├── ProductRating
+│   │       ├── ProductPrice
+│   │       ├── OriginalPrice
+│   │       ├── StockIndicator
+│   │       └── QuickViewButton
+│   └── EmptyState
+│
+└── PaginationSection
+    ├── PreviousButton
+    ├── PageNumber
+    └── NextButton
+
+
+3.3 CategoriesPage
+CategoriesPage
+│
+├── BreadcrumbSection
+│   └── Breadcrumbs
+│
+├── PageHeaderSection
+│   ├── PageTitle
+│   └── PageDescription
+│
+├── FeaturedCategoriesSection
+│   ├── SectionTitle
+│   └── CategoryGrid
+│       └── CategoryCard
+│           ├── CategoryImage
+│           ├── CategoryName
+│           └── CategoryLink
+│
+├── AllCategoriesSection
+│   ├── SectionTitle
+│   └── CategoryList
+│       └── CategoryItem
+│           ├── CategoryThumbnail
+│           ├── CategoryName
+│           └── CategoryCount
+│
+└── FeaturedProductsSection
+    ├── SectionTitle
+    └── ProductGrid
+
+
+3.4 SearchPage
+SearchPage
+│
+├── SearchHeaderSection
+│   ├── SearchInput
+│   ├── SearchButton
+│   └── ClearSearchButton
+│
+├── SearchSuggestionsSection
+│   ├── SectionTitle
+│   └── SuggestionList
+│       └── SuggestionItem
+│
+├── RecentSearchesSection
+│   ├── SectionTitle
+│   ├── RecentSearchItem
+│   └── ClearHistoryButton
+│
+├── SearchResultsHeaderSection
+│   ├── SearchQuery
+│   ├── ResultCount
+│   └── SortDropdown
+│
+├── SearchFiltersSection
+│   ├── FilterButton
+│   ├── ActiveFilterChip
+│   └── ClearFiltersButton
+│
+├── SearchResultsSection
+│   └── ProductGrid
+│       └── ProductCard
+│
+└── PaginationSection
+    ├── PreviousButton
+    ├── PageNumber
+    └── NextButton
+
+
+3.5 WishlistPage
+WishlistPage
+│
+├── PageHeaderSection
+│   ├── PageTitle
+│   └── WishlistCount
+│
+├── WishlistToolbarSection
+│   ├── SelectAllCheckbox
+│   ├── MoveToCartButton
+│   └── RemoveSelectedButton
+│
+├── WishlistProductsSection
+│   └── ProductGrid
+│       └── ProductCard
+│           ├── ProductImage
+│           ├── ProductName
+│           ├── ProductPrice
+│           ├── ProductRating
+│           ├── StockIndicator
+│           ├── AddToCartButton
+│           └── RemoveWishlistButton
+│
+└── EmptyWishlistSection
+    ├── EmptyStateIcon
+    ├── EmptyStateTitle
+    ├── EmptyStateDescription
+    └── BrowseProductsButton
+
+
+3.6 CartPage
+CartPage
+│
+├── PageHeaderSection
+│   ├── PageTitle
+│   └── CartItemCount
+│
+├── CartToolbarSection
+│   ├── SelectAllCheckbox
+│   └── RemoveSelectedButton
+│
+├── CartItemsSection
+│   └── CartItem
+│       ├── ItemCheckbox
+│       ├── ProductImage
+│       ├── ProductName
+│       ├── ProductVariant
+│       ├── ProductPrice
+│       ├── QuantitySelector
+│       ├── ItemSubtotal
+│       └── RemoveButton
+│
+├── CartNotesSection
+│   ├── NotesLabel
+│   └── NotesTextarea
+│
+├── OrderSummarySection
+│   ├── SelectedItemCount
+│   ├── Subtotal
+│   ├── Discount
+│   ├── ShippingEstimate
+│   └── Total
+│
+├── CheckoutActionSection
+│   ├── ContinueShoppingButton
+│   └── CheckoutButton
+│
+└── EmptyCartSection
+    ├── EmptyStateIcon
+    ├── EmptyStateTitle
+    ├── EmptyStateDescription
+    └── BrowseProductsButton
+
+
+3.7 OrdersPage
+OrdersPage
+│
+├── PageHeaderSection
+│   ├── PageTitle
+│   └── OrderCount
+│
+├── OrderFilterSection
+│   ├── OrderStatusTabs
+│   ├── SearchOrderInput
+│   └── SortDropdown
+│
+├── OrderListSection
+│   └── OrderCard
+│       ├── OrderNumber
+│       ├── OrderDate
+│       ├── OrderStatusBadge
+│       ├── OrderProductPreview
+│       ├── ProductCount
+│       ├── OrderTotal
+│       └── OrderActionGroup
+│           ├── ViewOrderButton
+│           ├── TrackOrderButton
+│           └── PayOrderButton
+│
+├── EmptyOrdersSection
+│   ├── EmptyStateIcon
+│   ├── EmptyStateTitle
+│   ├── EmptyStateDescription
+│   └── BrowseProductsButton
+│
+└── PaginationSection
+    ├── PreviousButton
+    ├── PageNumber
+    └── NextButton
+
+
+3.8 ProfilePage
+ProfilePage
+│
+├── ProfileHeaderSection
+│   ├── ProfileAvatar
+│   ├── CustomerName
+│   ├── CustomerEmail
+│   └── EditProfileButton
+│
+├── AccountOverviewSection
+│   ├── OrderSummary
+│   ├── WishlistSummary
+│   └── AddressSummary
+│
+├── AccountMenuSection
+│   ├── PersonalInformationMenu
+│   ├── AddressMenu
+│   ├── OrdersMenu
+│   ├── WishlistMenu
+│   ├── HelpCenterMenu
+│   └── ContactMenu
+│
+├── PreferencesSection
+│   ├── NotificationSwitch
+│   └── LanguageSelector
+│
+└── AccountActionSection
+    ├── LogoutButton
+    └── DeleteAccountButton
+
+
+4. Standalone Pages
+4.1 ProductDetailPage
+ProductDetailPage
+│
+├── BreadcrumbSection
+│   └── Breadcrumbs
+│
+├── ProductGallerySection
+│   ├── MainProductImage
+│   ├── GalleryThumbnailList
+│   ├── PreviousImageButton
+│   └── NextImageButton
+│
+├── ProductInformationSection
+│   ├── ProductBadge
+│   ├── ProductName
+│   ├── ProductRating
+│   ├── ReviewCount
+│   ├── ProductPrice
+│   ├── OriginalPrice
+│   ├── DiscountBadge
+│   └── StockIndicator
+│
+├── ProductVariantSection
+│   ├── VariantTitle
+│   ├── VariantOptionList
+│   └── VariantOption
+│
+├── ProductPurchaseSection
+│   ├── QuantitySelector
+│   ├── AddToCartButton
+│   ├── BuyNowButton
+│   └── WishlistButton
+│
+├── ProductDescriptionSection
+│   ├── SectionTitle
+│   └── DescriptionContent
+│
+├── ProductSpecificationsSection
+│   ├── SectionTitle
+│   └── SpecificationList
+│       └── SpecificationItem
+│
+├── ProductReviewsPreviewSection
+│   ├── SectionTitle
+│   ├── RatingSummary
+│   ├── ReviewList
+│   └── ViewAllReviewsButton
+│
+├── ProductQuestionsPreviewSection
+│   ├── SectionTitle
+│   ├── QuestionList
+│   └── ViewAllQuestionsButton
+│
+└── RelatedProductsSection
+    ├── SectionTitle
+    └── ProductSlider
+
+
+4.2 ProductReviewsPage
+ProductReviewsPage
+│
+├── PageHeaderSection
+│   ├── PageTitle
+│   └── ProductSummary
+│
+├── RatingOverviewSection
+│   ├── AverageRating
+│   ├── TotalReviewCount
+│   └── RatingDistribution
+│
+├── ReviewToolbarSection
+│   ├── RatingFilter
+│   ├── SortDropdown
+│   └── MediaFilter
+│
+├── ReviewListSection
+│   └── ReviewCard
+│       ├── ReviewerAvatar
+│       ├── ReviewerName
+│       ├── ReviewRating
+│       ├── ReviewDate
+│       ├── ReviewVariant
+│       ├── ReviewContent
+│       ├── ReviewImages
+│       └── HelpfulButton
+│
+├── WriteReviewSection
+│   ├── RatingSelector
+│   ├── ReviewTextarea
+│   ├── ReviewImageUpload
+│   └── SubmitReviewButton
+│
+└── PaginationSection
+    ├── PreviousButton
+    ├── PageNumber
+    └── NextButton
+
+
+4.3 ProductQuestionsPage
+ProductQuestionsPage
+│
+├── PageHeaderSection
+│   ├── PageTitle
+│   └── ProductSummary
+│
+├── QuestionSearchSection
+│   ├── SearchInput
+│   └── SearchButton
+│
+├── AskQuestionSection
+│   ├── QuestionTextarea
+│   └── SubmitQuestionButton
+│
+├── QuestionListSection
+│   └── QuestionCard
+│       ├── CustomerName
+│       ├── QuestionDate
+│       ├── QuestionContent
+│       ├── AnswerList
+│       │   └── AnswerItem
+│       └── ReplyCount
+│
+└── PaginationSection
+    ├── PreviousButton
+    ├── PageNumber
+    └── NextButton
+
+
+4.4 RelatedProductsPage
+RelatedProductsPage
+│
+├── PageHeaderSection
+│   ├── PageTitle
+│   └── ProductContext
+│
+├── RelatedProductsSection
+│   └── ProductGrid
+│       └── ProductCard
+│
+├── RecentlyViewedSection
+│   └── ProductSlider
+│
+└── RecommendedProductsSection
+    └── ProductGrid
+
+
+4.5 CheckoutPage
+CheckoutPage
+│
+├── PageHeaderSection
+│   ├── PageTitle
+│   └── CheckoutStepIndicator
+│
+├── CustomerInformationSection
+│   ├── CustomerNameInput
+│   ├── CustomerEmailInput
+│   └── CustomerPhoneInput
+│
+├── ShippingAddressSection
+│   ├── SelectedAddressCard
+│   ├── AddressSummary
+│   └── ChangeAddressButton
+│
+├── ShippingMethodSection
+│   ├── SelectedShippingMethod
+│   └── ChangeShippingButton
+│
+├── OrderItemsSection
+│   └── CheckoutItem
+│       ├── ProductImage
+│       ├── ProductName
+│       ├── ProductVariant
+│       ├── Quantity
+│       └── ItemSubtotal
+│
+├── OrderNotesSection
+│   └── OrderNotesTextarea
+│
+├── OrderSummarySection
+│   ├── Subtotal
+│   ├── ShippingFee
+│   ├── Discount
+│   └── GrandTotal
+│
+└── CheckoutActionSection
+    ├── TermsCheckbox
+    └── PlaceOrderButton
+
+
+4.6 AddressPage
+AddressPage
+│
+├── PageHeaderSection
+│   ├── PageTitle
+│   └── AddAddressButton
+│
+├── AddressListSection
+│   └── AddressCard
+│       ├── RecipientName
+│       ├── RecipientPhone
+│       ├── FullAddress
+│       ├── AddressLabel
+│       ├── DefaultAddressBadge
+│       ├── EditAddressButton
+│       └── DeleteAddressButton
+│
+├── AddressFormSection
+│   ├── RecipientNameInput
+│   ├── RecipientPhoneInput
+│   ├── ProvinceSelect
+│   ├── CitySelect
+│   ├── DistrictSelect
+│   ├── PostalCodeInput
+│   ├── FullAddressTextarea
+│   ├── AddressLabelInput
+│   └── DefaultAddressCheckbox
+│
+└── AddressActionSection
+    ├── CancelButton
+    └── SaveAddressButton
+
+
+4.7 ShippingPage
+ShippingPage
+│
+├── PageHeaderSection
+│   └── PageTitle
+│
+├── DeliveryAddressSection
+│   ├── RecipientName
+│   ├── RecipientPhone
+│   ├── DeliveryAddress
+│   └── ChangeAddressButton
+│
+├── ShippingMethodSection
+│   └── ShippingMethodCard
+│       ├── ShippingMethodName
+│       ├── ShippingDescription
+│       ├── EstimatedDelivery
+│       ├── ShippingFee
+│       └── ShippingRadio
+│
+├── ShippingSummarySection
+│   ├── SelectedMethod
+│   └── ShippingFee
+│
+└── ShippingActionSection
+    ├── BackButton
+    └── ContinueButton
+
+
+4.8 PaymentPage
+PaymentPage
+│
+├── PageHeaderSection
+│   ├── PageTitle
+│   └── PaymentStepIndicator
+│
+├── OrderInformationSection
+│   ├── OrderNumber
+│   ├── OrderDate
+│   └── PaymentDeadline
+│
+├── PaymentMethodSection
+│   ├── PaymentCategory
+│   └── PaymentMethodCard
+│       ├── PaymentLogo
+│       ├── PaymentName
+│       ├── PaymentDescription
+│       └── PaymentRadio
+│
+├── PaymentSummarySection
+│   ├── OrderSubtotal
+│   ├── ShippingFee
+│   ├── PaymentFee
+│   └── GrandTotal
+│
+└── PaymentActionSection
+    ├── BackButton
+    └── PayNowButton
+
+
+4.9 PaymentReturnPage
+PaymentReturnPage
+│
+├── PaymentStatusSection
+│   ├── StatusIcon
+│   ├── StatusTitle
+│   ├── StatusDescription
+│   └── StatusBadge
+│
+├── PaymentInformationSection
+│   ├── OrderNumber
+│   ├── PaymentReference
+│   ├── PaymentMethod
+│   ├── PaymentAmount
+│   └── PaymentDate
+│
+├── PaymentInstructionsSection
+│   └── InstructionList
+│
+└── PaymentActionSection
+    ├── ViewOrderButton
+    ├── RetryPaymentButton
+    └── BackToHomeButton
+
+
+4.10 OrderDetailPage
+OrderDetailPage
+│
+├── PageHeaderSection
+│   ├── PageTitle
+│   └── OrderNumber
+│
+├── OrderStatusSection
+│   ├── OrderStatusBadge
+│   ├── PaymentStatusBadge
+│   └── OrderStatusTimeline
+│
+├── OrderInformationSection
+│   ├── OrderNumber
+│   ├── OrderDate
+│   └── PaymentDeadline
+│
+├── OrderItemsSection
+│   └── OrderItem
+│       ├── ProductImage
+│       ├── ProductName
+│       ├── ProductVariant
+│       ├── Quantity
+│       └── ItemSubtotal
+│
+├── ShippingInformationSection
+│   ├── RecipientName
+│   ├── RecipientPhone
+│   └── DeliveryAddress
+│
+├── PaymentInformationSection
+│   ├── PaymentMethod
+│   ├── PaymentReference
+│   └── PaymentStatus
+│
+├── OrderSummarySection
+│   ├── Subtotal
+│   ├── ShippingFee
+│   ├── Discount
+│   └── GrandTotal
+│
+└── OrderActionSection
+    ├── TrackOrderButton
+    ├── PayOrderButton
+    ├── ContactSupportButton
+    └── ReturnRefundButton
+
+
+4.11 OrderTrackingPage
+OrderTrackingPage
+│
+├── PageHeaderSection
+│   └── PageTitle
+│
+├── TrackingSearchSection
+│   ├── OrderNumberInput
+│   └── TrackOrderButton
+│
+├── TrackingSummarySection
+│   ├── OrderNumber
+│   ├── TrackingNumber
+│   ├── CurrentStatus
+│   └── EstimatedDelivery
+│
+├── TrackingTimelineSection
+│   └── TrackingEvent
+│       ├── EventStatus
+│       ├── EventDescription
+│       ├── EventDate
+│       └── EventLocation
+│
+├── ShippingInformationSection
+│   ├── CourierName
+│   └── TrackingNumber
+│
+└── TrackingActionSection
+    ├── ViewOrderButton
+    └── ContactSupportButton
+
+
+4.12 ReturnRefundPage
+ReturnRefundPage
+│
+├── PageHeaderSection
+│   └── PageTitle
+│
+├── EligibleOrderSection
+│   └── OrderSummaryCard
+│       ├── OrderNumber
+│       ├── OrderDate
+│       └── OrderStatus
+│
+├── ReturnItemsSection
+│   └── ReturnItem
+│       ├── ProductImage
+│       ├── ProductName
+│       ├── PurchasedQuantity
+│       └── ReturnQuantitySelector
+│
+├── ReturnReasonSection
+│   ├── ReturnReasonRadio
+│   └── AdditionalExplanationTextarea
+│
+├── ReturnEvidenceSection
+│   ├── EvidenceUpload
+│   └── EvidencePreview
+│
+├── RefundInformationSection
+│   ├── RefundMethod
+│   └── RefundAmount
+│
+└── ReturnActionSection
+    ├── CancelButton
+    └── SubmitReturnButton
+
+
+4.13 ContactPage
+ContactPage
+│
+├── PageHeaderSection
+│   ├── PageTitle
+│   └── PageDescription
+│
+├── ContactInformationSection
+│   ├── EmailInformation
+│   ├── PhoneInformation
+│   ├── WhatsAppInformation
+│   └── BusinessAddress
+│
+├── ContactFormSection
+│   ├── CustomerNameInput
+│   ├── CustomerEmailInput
+│   ├── SubjectInput
+│   ├── MessageTextarea
+│   └── SubmitButton
+│
+└── SocialLinksSection
+    ├── SocialLink
+    └── SocialIcon
+
+
+4.14 FAQPage
+FAQPage
+│
+├── PageHeaderSection
+│   ├── PageTitle
+│   └── PageDescription
+│
+├── FAQSearchSection
+│   └── SearchInput
+│
+├── FAQCategoriesSection
+│   └── FAQCategoryTab
+│
+├── FAQListSection
+│   └── FAQItem
+│       ├── Question
+│       └── Answer
+│
+└── ContactSupportSection
+    ├── SupportDescription
+    └── ContactSupportButton
+
+
+4.15 NotFoundPage
+NotFoundPage
+│
+├── ErrorIllustrationSection
+│   └── ErrorIllustration
+│
+├── ErrorInformationSection
+│   ├── ErrorCode
+│   ├── ErrorTitle
+│   └── ErrorDescription
+│
+└── ErrorActionSection
+    ├── BackButton
+    └── HomeButton
+
+
+5. Global Components
+Komponen reusable yang dapat dipakai di berbagai halaman.
+GlobalComponents
+│
+├── ProductCard
+│   ├── ProductImage
+│   ├── ProductBadge
+│   ├── WishlistButton
+│   ├── ProductName
+│   ├── ProductRating
+│   ├── PriceDisplay
+│   ├── StockIndicator
+│   └── QuickViewButton
+│
+├── PriceDisplay
+│   ├── CurrentPrice
+│   ├── OriginalPrice
+│   └── DiscountBadge
+│
+├── StockIndicator
+│   ├── StockLabel
+│   └── StockValue
+│
+├── ProductVariantSelector
+│   ├── VariantLabel
+│   ├── VariantOption
+│   └── SelectedVariant
+│
+├── QuantitySelector
+│   ├── DecreaseButton
+│   ├── QuantityValue
+│   └── IncreaseButton
+│
+├── AddressCard
+│   ├── RecipientName
+│   ├── RecipientPhone
+│   ├── AddressLabel
+│   ├── AddressDetails
+│   └── AddressActions
+│
+├── PaymentMethodCard
+│   ├── PaymentLogo
+│   ├── PaymentName
+│   ├── PaymentDescription
+│   └── PaymentRadio
+│
+├── OrderItem
+│   ├── ProductImage
+│   ├── ProductName
+│   ├── ProductVariant
+│   ├── Quantity
+│   └── Price
+│
+├── OrderStatusTimeline
+│   ├── TimelineItem
+│   ├── TimelineIcon
+│   ├── TimelineTitle
+│   ├── TimelineDescription
+│   └── TimelineDate
+│
+├── EmptyState
+│   ├── Illustration
+│   ├── Title
+│   ├── Description
+│   └── ActionButton
+│
+├── ErrorState
+│   ├── ErrorIcon
+│   ├── ErrorTitle
+│   ├── ErrorDescription
+│   └── RetryButton
+│
+├── LoadingState
+│   ├── LoaderCircular
+│   └── LoadingText
+│
+├── SkeletonCard
+│   ├── SkeletonImage
+│   ├── SkeletonText
+│   └── SkeletonButton
+│
+└── BottomDrawer
+    ├── DrawerHandle
+    ├── DrawerHeader
+    ├── DrawerContent
+    └── DrawerFooter
+
+
+6. Overlays
+Overlays
+│
+├── MegaMenuOverlay
+│   ├── MegaMenu
+│   ├── CategoryList
+│   └── CategoryLink
+│
+├── SearchOverlay
+│   ├── SearchInput
+│   ├── RecentSearches
+│   ├── SearchSuggestions
+│   └── SearchResults
+│
+├── FilterDrawer
+│   ├── DrawerHeader
+│   ├── CategoryFilter
+│   ├── PriceFilter
+│   ├── RatingFilter
+│   ├── AvailabilityFilter
+│   └── DrawerFooter
+│
+├── SortDrawer
+│   ├── DrawerHeader
+│   ├── SortOptionList
+│   └── ApplyButton
+│
+├── CartDrawer
+│   ├── DrawerHeader
+│   ├── CartItemList
+│   ├── CartSubtotal
+│   └── ViewCartButton
+│
+├── QuickViewModal
+│   ├── ProductGallery
+│   ├── ProductInformation
+│   ├── ProductVariantSelector
+│   ├── QuantitySelector
+│   └── AddToCartButton
+│
+├── ConfirmationModal
+│   ├── ModalIcon
+│   ├── ModalTitle
+│   ├── ModalDescription
+│   ├── CancelButton
+│   └── ConfirmButton
+│
+├── Toast
+│   ├── ToastIcon
+│   ├── ToastMessage
+│   └── ToastCloseButton
+│
+└── LoadingOverlay
+    ├── LoaderCircular
+    └── LoadingMessage
+
+
+7. Storefront UI V2 — Component, Block dan Hook Mapping
+Berikut inventaris komponen dasar dari dokumentasi Storefront UI V2 yang digunakan sebagai referensi implementasi.
+Components
+Components
+├── AccordionItem
+├── Badge
+├── Button
+├── Checkbox
+├── Chip
+├── Counter
+├── Drawer
+├── Dropdown
+├── IconBase
+├── Input
+├── Link
+├── ListItem
+├── LoaderCircular
+├── LoaderLinear
+├── Modal
+├── ProgressCircular
+├── ProgressLinear
+├── Radio
+├── Rating
+├── RatingButton
+├── Scrollable
+├── Select
+├── Switch
+├── Textarea
+├── Thumbnail
+└── Tooltip
+
+
+Blocks
+Blocks
+├── Alert
+├── Banners
+├── Breadcrumbs
+├── Card
+├── Checkout
+├── Combobox
+├── Filters
+├── Footer
+├── FormFields
+├── Gallery
+├── MegaMenu
+├── NavbarBottom
+├── NavbarTop
+├── NewsletterBox
+├── OrderSummary
+├── Pagination
+├── ProductCard
+├── ProductSlider
+├── QuantitySelector
+├── RatingForms
+├── Review
+├── Search
+├── SelectDropdown
+└── Tabs
+
+
+Hooks
+Hooks
+├── useDisclosure
+├── useDropdown
+├── useFocusVisible
+├── usePagination
+├── usePopover
+├── useScrollable
+├── useTooltip
+└── useTrapFocus
+
+
+8. Global UI State dan Interaction
+GlobalInteraction
+│
+├── Navigation
+│   ├── ActiveNavigation
+│   ├── RouteNavigation
+│   └── BackNavigation
+│
+├── ProductInteraction
+│   ├── ProductSelection
+│   ├── VariantSelection
+│   ├── QuantityManagement
+│   ├── WishlistManagement
+│   └── QuickViewManagement
+│
+├── SearchInteraction
+│   ├── SearchQuery
+│   ├── SearchSuggestions
+│   └── SearchHistory
+│
+├── FilterInteraction
+│   ├── FilterSelection
+│   ├── SortSelection
+│   └── PaginationState
+│
+├── CartInteraction
+│   ├── AddToCart
+│   ├── RemoveFromCart
+│   ├── UpdateQuantity
+│   └── CartSummary
+│
+├── CheckoutInteraction
+│   ├── CustomerInformation
+│   ├── AddressSelection
+│   ├── ShippingSelection
+│   └── PaymentSelection
+│
+├── OrderInteraction
+│   ├── OrderStatus
+│   ├── PaymentStatus
+│   ├── OrderTracking
+│   └── ReturnRefund
+│
+└── FeedbackInteraction
+    ├── ToastNotification
+    ├── ModalConfirmation
+    ├── LoadingState
+    └── ErrorState
